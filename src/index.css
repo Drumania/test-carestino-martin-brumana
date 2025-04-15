@@ -1,0 +1,86 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.simil-grid {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  & > div {
+    height: 20px;
+    border: 1px solid #999;
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+.color-menu {
+  position: absolute;
+  gap: 5px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.2s ease-in-out;
+}
+
+.color-menu.fade-in {
+  animation: fadeIn 0.2s forwards;
+}
+
+.color-menu.fade-out {
+  animation: fadeOut 0.2s forwards;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.items-color-menu {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
